@@ -33,16 +33,20 @@ class ViewController: UIViewController {
         let doubleK = Double(kessanKoujiGenkaTextField.text!)
         let doubleS = Double(sougakuKoujiGenkaTextField.text!)
         koujiShintyokudo.text = calculation(kessan: doubleK!, sougaku: doubleS!)
+        // キーボードを閉じる。総額工事原価欄と接続
+        sougakuKoujiGenkaTextField.endEditing(true)
     }
+    
     
     // 計算式で結果を出して値を返す
     func calculation(kessan: Double, sougaku: Double) -> String {
         let k = kessan
         let s = sougaku
         var result = k / s
-        result = floor(result * 10)
-        return result.description
+        result = floor(result * 100)
+        return result.description + "%"  // 結果を％表記にする
     }
+    
     
     // ボタンを丸くする
     @IBOutlet weak var curveButton: UIButton!
@@ -50,7 +54,7 @@ class ViewController: UIViewController {
             super.viewDidLayoutSubviews()
             // 画面上の座標設定
             self.curveButton.frame = CGRect(x: (self.view.frame.size.width / 2) - 150,
-                                            y: (self.view.frame.size.height / 2) + 130, width: 300, height: 100)
+                                            y: (self.view.frame.size.height / 2) + 40, width: 300, height: 100)
             //角丸の程度を指定
             self.curveButton.layer.cornerRadius = 40.0
         }
