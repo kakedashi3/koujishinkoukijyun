@@ -15,9 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 入力欄にヒント文字を表示する
-        kessanKoujiGenkaTextField.placeholder = "発生した工事原価"
-        sougakuKoujiGenkaTextField.placeholder = "工事原価総額"
         // 数字入力用のキーボードに変換
         self.kessanKoujiGenkaTextField.keyboardType = UIKeyboardType.numberPad
         self.sougakuKoujiGenkaTextField.keyboardType = UIKeyboardType.numberPad
@@ -52,9 +49,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var curveButton: UIButton!
     override func viewDidLayoutSubviews() {
             super.viewDidLayoutSubviews()
-            // 画面上の座標設定
-            self.curveButton.frame = CGRect(x: (self.view.frame.size.width / 2) - 150,
-                                            y: (self.view.frame.size.height / 2) + 40, width: 300, height: 100)
+        
             //角丸の程度を指定
             self.curveButton.layer.cornerRadius = 40.0
         }
