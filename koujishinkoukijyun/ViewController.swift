@@ -45,15 +45,6 @@ class ViewController: UIViewController {
     }
     
     
-    // ボタンを丸くする
-    @IBOutlet weak var curveButton: UIButton!
-    override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-        
-            //角丸の程度を指定
-            self.curveButton.layer.cornerRadius = 40.0
-        }
-    
     
 }
 
